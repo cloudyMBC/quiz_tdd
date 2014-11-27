@@ -8,7 +8,7 @@ describe Quiz do
 	end
 
 	it "store answer" do
-		answer = "yes" + rand(10).to_s
+		answer = "yes"
 	    quiz = Quiz.new
 	    quiz.store_answer(answer)
 
@@ -16,9 +16,8 @@ describe Quiz do
     end
 
     it "only accepts yes or no as answers" do
-    	pending
     	quiz = Quiz.new
-    	expect(quiz.store_answer("hahahaha")).to raise Exception
+    	expect{quiz.store_answer("huhuhu") }.to raise_error(InvalidAnswerError)
     end
 
 end
