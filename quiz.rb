@@ -6,7 +6,7 @@ class Quiz
 	def store_answer(answer)
 		@last = answer
 		unless @last == "yes" || @last == "no"
-			raise InvalidAnswerError, "Answer is not yes or not. The answer was: #{answer}"
+			raise InvalidAnswerError, "Answer is not yes or no. The answer was: #{answer}"
 		end
 	end	
 	def last_answer
