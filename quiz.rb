@@ -1,7 +1,14 @@
 
 class Quiz
+attr_reader :count
+	def initialize
+		@questions = ["Is your second name 'Meow'?", "Do you like to pet dogs?"]
+		@count = 0
+	end
 	def next_question
-		"Is your second name 'Meow'?"
+		current_question = @questions[@count]
+		@count =+ 1
+		current_question
 	end
 	def store_answer(answer)
 		@last = answer
