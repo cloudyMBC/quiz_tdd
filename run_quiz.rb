@@ -10,7 +10,8 @@ rescue InvalidAnswerError
   retry
 end
 
-while q.count < 2
+#while q.count < 2
+while q.has_more_questions?
   puts q.next_question
   answer = gets.chomp
   store(q, answer)
