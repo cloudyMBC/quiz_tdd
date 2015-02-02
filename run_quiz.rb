@@ -1,6 +1,6 @@
 require './quiz'
 
-q = Quiz.new
+q = Quiz.new(["Is your second name 'Meow'?", "Do you like to pet dogs?", "Do you post cat pictures on Twitter?"])
 
 def store(q, answer)
   q.store_answer(answer)
@@ -10,9 +10,9 @@ rescue InvalidAnswerError
   retry
 end
 
-#while q.count < 2
 while q.has_more_questions?
   puts q.next_question
   answer = gets.chomp
   store(q, answer)
 end
+# q.result

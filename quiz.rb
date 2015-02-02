@@ -1,8 +1,8 @@
 class Quiz
 	attr_reader :count
 
-	def initialize
-		@questions = ["Is your second name 'Meow'?", "Do you like to pet dogs?", "Do you post cat pictures on Twitter?"]
+	def initialize(questions)
+		@questions = questions
 		@count = 0
 	end
 
@@ -23,7 +23,11 @@ class Quiz
 		@last
 	end
 
-	def finished
+	def has_more_questions?
+		@questions.count > @count
+	end
+
+	def result
 
 	end
 end
